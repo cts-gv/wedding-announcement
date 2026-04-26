@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eric &amp; Maria — Wedding Website</title>
+  <meta name="description" content="Eric and Maria are getting married September 25, 2027 in Grandview, Washington." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ── FLOATING HEARTS (Our Story section only, behind all content) ── -->
+<div class="hearts-container" id="hearts-container" aria-hidden="true"></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     NAVIGATION
+     Text and links come from config.js → nav
+     ══════════════════════════════════════════════════════════ -->
+<header>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#our-story" class="nav-brand" id="nav-brand">Eric &amp; Maria</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links"></ul>
+  </nav>
+</header>
+
+<main>
+
+<!-- ══════════════════════════════════════════════════════════
+     OUR STORY
+     Photos: config.js → photos.heroOurStory, howWeMet,
+             howItWent, proposal
+     Text:   config.js → story.*
+     ══════════════════════════════════════════════════════════ -->
+<section id="our-story" aria-label="Our Story">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-content">
+      <h2 id="couple-names"></h2>
+      <h1>We're Getting Married!</h1>
+      <p class="hero-date" id="wedding-date"></p>
+      <p class="hero-caption" id="wedding-location"></p>
+      <p class="hero-caption" id="story-caption"></p>
+      <!-- Countdown timer -->
+      <div class="countdown" id="countdown" aria-live="polite"></div>
+    </div>
+    <div class="hero-image-wrapper">
+      <!--
+        ╔═══════════════════════════════════════════════════╗
+        ║  HERO PHOTO → config.js → photos.heroOurStory    ║
+        ╚═══════════════════════════════════════════════════╝
+      -->
+      <img id="hero-our-story" class="hero-image" src="" alt="Eric and Maria" />
+      <div class="hero-tag">Our Story</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Our Story</h2>
+  <p class="section-subtitle">From a chance meeting to a lifetime together, here's how it all began.</p>
+
+  <!-- How We Met -->
+  <div class="two-column fade-in">
+    <div class="story-card">
+      <h3 id="how-we-met-title"></h3>
+      <p id="how-we-met-text"></p>
+    </div>
+    <div class="story-image-wrapper">
+      <!--
+        ╔═════════════════════════════════════════════════╗
+        ║  PHOTO → config.js → photos.howWeMet           ║
+        ╚═════════════════════════════════════════════════╝
+      -->
+      <img id="img-how-we-met" src="" alt="How we met" loading="lazy" />
+      <div class="story-caption" id="how-we-met-caption"></div>
+    </div>
+  </div>
+
+  <!-- How It Went -->
+  <div class="two-column fade-in" style="margin-top:2.5rem">
+    <div class="story-image-wrapper">
+      <!--
+        ╔═════════════════════════════════════════════════╗
+        ║  PHOTO → config.js → photos.howItWent          ║
+        ╚═════════════════════════════════════════════════╝
+      -->
+      <img id="img-how-it-went" src="" alt="How it went" loading="lazy" />
+      <div class="story-caption" id="how-it-went-caption"></div>
+    </div>
+    <div class="story-card">
+      <h3 id="how-it-went-title"></h3>
+      <p id="how-it-went-text"></p>
+    </div>
+  </div>
+
+  <!-- The Proposal -->
+  <div class="two-column fade-in" style="margin-top:2.5rem">
+    <div class="story-card">
+      <h3 id="proposal-title"></h3>
+      <p id="proposal-text"></p>
+    </div>
+    <div class="story-image-wrapper">
+      <!--
+        ╔═════════════════════════════════════════════════╗
+        ║  PHOTO → config.js → photos.proposal           ║
+        ╚═════════════════════════════════════════════════╝
+      -->
+      <img id="img-proposal" src="" alt="The proposal" loading="lazy" />
+      <div class="story-caption" id="proposal-caption"></div>
+    </div>
+  </div>
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     WEDDING PARTY
+     Photos: config.js → photos.bm1–bm5, gm1–gm5, vip1–vip2
+     Names:  config.js → party.bridesmaids / groomsmen / vips
+     ══════════════════════════════════════════════════════════ -->
+<section id="wedding-party" aria-label="Wedding Party">
+
+  <div class="hero">
+    <div class="hero-content">
+      <h2>The Wedding Party</h2>
+      <h1>Our Favorite People</h1>
+      <p class="hero-caption" id="party-caption"></p>
+    </div>
+    <div class="hero-image-wrapper">
+      <!--
+        ╔═══════════════════════════════════════════════════════╗
+        ║  HERO PHOTO → config.js → photos.heroWeddingParty    ║
+        ╚═══════════════════════════════════════════════════════╝
+      -->
+      <img id="hero-wedding-party" class="hero-image" src="" alt="Wedding party" />
+      <div class="hero-tag">Wedding Party</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Bridesmaids</h2>
+  <p class="section-subtitle">The women who bring joy, laughter, and endless support.</p>
+  <!-- Cards built from config.js → party.bridesmaids -->
+  <div class="wp-grid" id="bridesmaids-grid"></div>
+
+  <h2 class="section-title" style="margin-top:3rem">Groomsmen</h2>
+  <p class="section-subtitle">The men who have shaped our lives in unforgettable ways.</p>
+  <!-- Cards built from config.js → party.groomsmen -->
+  <div class="wp-grid" id="groomsmen-grid"></div>
+
+  <h2 class="section-title" style="margin-top:3rem">VIPs</h2>
+  <p class="section-subtitle">The people who make this day even more meaningful.</p>
+  <!-- Cards built from config.js → party.vips -->
+  <div class="wp-grid" id="vips-grid"></div>
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     THE WEEKEND
+     Photos: config.js → photos.heroWeekend, eventFriday,
+             eventSaturday, eventSunday
+     Text:   config.js → weekend.events
+     ══════════════════════════════════════════════════════════ -->
+<section id="the-weekend" aria-label="The Weekend">
+
+  <div class="hero">
+    <div class="hero-content">
+      <h2>The Weekend</h2>
+      <h1>Celebrate With Us</h1>
+      <p class="hero-caption" id="weekend-caption"></p>
+    </div>
+    <div class="hero-image-wrapper">
+      <!--
+        ╔═══════════════════════════════════════════════════╗
+        ║  HERO PHOTO → config.js → photos.heroWeekend     ║
+        ╚═══════════════════════════════════════════════════╝
+      -->
+      <img id="hero-weekend" class="hero-image" src="" alt="The weekend" />
+      <div class="hero-tag">The Weekend</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Weekend Events</h2>
+  <p class="section-subtitle">Join us for a weekend full of love, laughter, and celebration.</p>
+
+  <!-- Events built dynamically from config.js → weekend.events -->
+  <div class="events-wrap" id="events-wrap"></div>
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     GALLERY
+     Photos: config.js → photos.gallery (array)
+     Add/remove photos freely — gallery builds automatically
+     ══════════════════════════════════════════════════════════ -->
+<section id="gallery" aria-label="Photo Gallery">
+
+  <h2 class="section-title" id="gallery-title"></h2>
+  <p class="section-subtitle" id="gallery-subtitle"></p>
+
+  <!-- Gallery items built from config.js → photos.gallery -->
+  <div class="gallery-grid" id="gallery-grid"></div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <div class="lightbox-inner">
+      <img id="lightbox-img" src="" alt="Expanded photo" />
+    </div>
+  </div>
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     RSVP
+     Config: config.js → rsvp.*
+     Submissions go to config.js → rsvp.formspreeEndpoint
+     ══════════════════════════════════════════════════════════ -->
+<section id="rsvp" aria-label="RSVP">
+
+  <h2 class="section-title" id="rsvp-title"></h2>
+  <p class="section-subtitle" id="rsvp-subtitle"></p>
+  <p class="section-subtitle" style="margin-top:-1.5rem;font-size:0.88rem" id="rsvp-deadline"></p>
+
+  <!-- Setup note — auto-hides once formspreeEndpoint is configured -->
+  <div class="setup-note" id="rsvp-setup-note">
+    <strong>📋 One-time Formspree Setup (RSVP)</strong>
+    <ol>
+      <li>Go to <a href="https://formspree.io" target="_blank" rel="noopener">formspree.io</a> → create a free account.</li>
+      <li>Click <strong>+ New Form</strong> → name it <em>"Wedding RSVP"</em>.</li>
+      <li>Copy your endpoint: <code>https://formspree.io/f/xxxxxxxx</code></li>
+      <li>Open <code>js/config.js</code> → paste into <code>rsvp.formspreeEndpoint</code>.</li>
+      <li>This yellow box disappears automatically once configured.</li>
+    </ol>
+  </div>
+
+  <div class="rsvp-wrap fade-in">
+    <div class="rsvp-header">
+      <h3 id="rsvp-header-names">Eric &amp; Maria</h3>
+      <p>September 25, 2027 · Grandview, Washington</p>
+    </div>
+
+    <div class="rsvp-body">
+      <form id="rsvp-form" novalidate>
+        <input type="text"   name="_gotcha"   style="display:none" tabindex="-1" autocomplete="off" />
+        <input type="hidden" name="attending" id="hidden-attending" value="" />
+
+        <!-- Step 1: Attending? -->
+        <div class="form-divider"><span>Will you be joining us?</span></div>
+        <div class="attending-toggle">
+          <button type="button" class="toggle-btn" id="btn-yes">
+            <span class="toggle-icon">🥂</span>
+            Joyfully Accepts
+            <span class="toggle-sub">Yes, I'll be there!</span>
+          </button>
+          <button type="button" class="toggle-btn" id="btn-no">
+            <span class="toggle-icon">💌</span>
+            Regretfully Declines
+            <span class="toggle-sub">I can't make it</span>
+          </button>
+        </div>
+
+        <!-- Decline fields -->
+        <div class="rsvp-decline-section" id="rsvp-decline-section">
+          <div class="decline-box">
+            <div class="decline-box-icon">💜</div>
+            <p>We're so sorry you can't make it — you'll be in our hearts on the big day.</p>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="decline-name">Your Name <span class="req">*</span></label>
+            <input class="form-input" type="text" id="decline-name" name="name" placeholder="First &amp; Last Name" autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="decline-email">Your Email</label>
+            <input class="form-input" type="email" id="decline-email" name="email" placeholder="Optional" autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="decline-note">A note for the couple</label>
+            <textarea class="form-textarea" id="decline-note" name="note" placeholder="We'd love to hear from you…" style="min-height:80px"></textarea>
+          </div>
+        </div>
+
+        <!-- Attending fields -->
+        <div class="rsvp-attending-fields" id="rsvp-attending-fields">
+
+          <div class="form-divider"><span>Your Information</span></div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="guest1-first">First Name <span class="req">*</span></label>
+              <input class="form-input" type="text" id="guest1-first" name="guest_1_first" placeholder="First Name" autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="guest1-last">Last Name <span class="req">*</span></label>
+              <input class="form-input" type="text" id="guest1-last" name="guest_1_last" placeholder="Last Name" autocomplete="family-name" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="guest1-email">Email</label>
+              <input class="form-input" type="email" id="guest1-email" name="guest_1_email" placeholder="Optional" autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="guest1-meal">Meal <span class="req">*</span></label>
+              <!-- Options populated from config.js → rsvp.mealOptions -->
+              <select class="form-select" id="guest1-meal" name="guest_1_meal"></select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="guest1-dietary">Dietary Restrictions</label>
+            <input class="form-input" type="text" id="guest1-dietary" name="guest_1_dietary" placeholder="None, vegetarian, gluten-free, nut allergy…" />
+          </div>
+
+          <div class="form-divider"><span>Additional Guests</span></div>
+          <div id="additional-guests"></div>
+          <button type="button" class="add-guest-btn" id="add-guest-btn">+ Add Another Guest</button>
+
+          <div class="form-divider"><span>One More Thing</span></div>
+          <div class="form-group">
+            <label class="form-label" for="song-request">Song Request 🎵</label>
+            <input class="form-input" type="text" id="song-request" name="song_request" placeholder="What song will get you on the dance floor?" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="guest-note">Note for the couple</label>
+            <textarea class="form-textarea" id="guest-note" name="notes" placeholder="Anything else we should know?" style="min-height:80px"></textarea>
+          </div>
+
+        </div><!-- /.rsvp-attending-fields -->
+
+        <button class="btn-submit" type="submit" id="rsvp-submit">Send RSVP →</button>
+        <p class="form-note" id="rsvp-note"></p>
+
+      </form>
+
+      <!-- Status lives outside the form so it stays visible after form hides -->
+      <div class="form-status" id="rsvp-status" role="alert" aria-live="polite"></div>
+
+    </div><!-- /.rsvp-body -->
+  </div><!-- /.rsvp-wrap -->
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     REGISTRY
+     Config: config.js → registry.*
+     Add/remove buttons in config.js → registry.buttons
+     ══════════════════════════════════════════════════════════ -->
+<section id="registry" aria-label="Registry">
+
+  <div class="hero">
+    <div class="hero-content">
+      <h2>Registry</h2>
+      <h1 id="registry-hero-caption"></h1>
+      <p class="hero-caption" id="registry-hero-subtitle"></p>
+    </div>
+    <div class="hero-image-wrapper">
+      <!--
+        ╔═══════════════════════════════════════════════════╗
+        ║  HERO PHOTO → config.js → photos.heroRegistry    ║
+        ╚═══════════════════════════════════════════════════╝
+      -->
+      <img id="hero-registry" class="hero-image" src="" alt="Registry" />
+      <div class="hero-tag">Registry</div>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="registry-title"></h2>
+  <p class="section-subtitle" id="registry-subtitle"></p>
+
+  <!-- Buttons built from config.js → registry.buttons -->
+  <div class="registry-buttons" id="registry-buttons"></div>
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     WE ARE MARRIED
+     Photo: config.js → photos.heroMarried
+     Text:  config.js → married.*
+     Update message after the wedding in config.js
+     ══════════════════════════════════════════════════════════ -->
+<section id="we-are-married" aria-label="We Are Married">
+
+  <div class="hero">
+    <div class="hero-content">
+      <h2>We Are Married</h2>
+      <h1>Forever Starts Now</h1>
+      <p class="hero-caption" id="married-caption"></p>
+    </div>
+    <div class="hero-image-wrapper">
+      <!--
+        ╔═══════════════════════════════════════════════════╗
+        ║  HERO PHOTO → config.js → photos.heroMarried     ║
+        ╚═══════════════════════════════════════════════════╝
+      -->
+      <img id="hero-married" class="hero-image" src="" alt="We are married" />
+      <div class="hero-tag">We Are Married</div>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="married-title"></h2>
+  <p class="section-subtitle" id="married-subtitle"></p>
+
+  <div class="married-message fade-in">
+    <p id="married-message"></p>
+  </div>
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     MESSAGES
+     Config: config.js → messages.*
+     Submissions go to config.js → messages.formspreeEndpoint
+     ══════════════════════════════════════════════════════════ -->
+<section id="messages" aria-label="Messages">
+
+  <h2 class="section-title" id="messages-title"></h2>
+  <p class="section-subtitle" id="messages-subtitle"></p>
+
+  <!-- Setup note — auto-hides once formspreeEndpoint is configured -->
+  <div class="setup-note" id="messages-setup-note">
+    <strong>📋 One-time Formspree Setup (Messages)</strong>
+    <ol>
+      <li>Go to <a href="https://formspree.io" target="_blank" rel="noopener">formspree.io</a> → create a free account.</li>
+      <li>Click <strong>+ New Form</strong> → name it <em>"Wedding Messages"</em>.</li>
+      <li>Copy your endpoint: <code>https://formspree.io/f/xxxxxxxx</code></li>
+      <li>Open <code>js/config.js</code> → paste into <code>messages.formspreeEndpoint</code>.</li>
+      <li>This yellow box disappears automatically once configured.</li>
+    </ol>
+  </div>
+
+  <div class="messages-wrap fade-in">
+    <p class="messages-intro" id="messages-intro"></p>
+
+    <form id="messages-form" novalidate>
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+      <div class="form-row" style="margin-bottom:1.25rem">
+        <div class="form-group">
+          <label class="form-label" for="msg-name">Your Name <span class="req">*</span></label>
+          <input class="form-input" type="text" id="msg-name" name="name" placeholder="First &amp; Last Name" required autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="msg-email">Your Email</label>
+          <input class="form-input" type="email" id="msg-email" name="email" placeholder="Optional" autocomplete="email" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="msg-body">Your Message <span class="req">*</span></label>
+        <textarea class="form-textarea" id="msg-body" name="message"
+                  placeholder="Share a note, a wish, a memory, or just say hello…"
+                  required style="min-height:140px"></textarea>
+      </div>
+
+      <button class="btn-submit" type="submit" id="messages-submit" style="display:block">
+        Send Message →
+      </button>
+    </form>
+
+    <div class="form-status" id="messages-status" role="alert" aria-live="polite"></div>
+  </div>
+
+</section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+     Text: config.js → footer.*
+     ══════════════════════════════════════════════════════════ -->
+<footer>
+  <p id="footer-line1"></p>
+  <p id="footer-line2"></p>
+  <p class="footer-hashtag" id="footer-hashtag"></p>
+</footer>
+
+<!-- Scripts — config must load before main -->
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
