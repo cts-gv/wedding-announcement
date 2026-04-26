@@ -1,0 +1,99 @@
+/* THEME COLORS */
+:root {
+  --navy: #002366;
+  --dusty-rose: #dcae96;
+  --bg-cream: #fcfaf9;
+  --text-main: #333;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  background: var(--bg-cream);
+  color: var(--text-main);
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+.section-title {
+  text-align: center;
+  font-size: 2.4rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.section-divider {
+  width: 300px;
+  height: 2px;
+  background: var(--dusty-rose);
+  margin: 4rem auto;
+  opacity: 0.5;
+}
+
+/* Header & Nav */
+header {
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+}
+
+.nav-brand { font-size: 1.5rem; font-weight: 700; color: var(--navy); }
+.nav-links a { text-decoration: none; color: var(--text-main); margin-left: 1rem; font-weight: 500; }
+.nav-links a:hover { color: var(--dusty-rose); }
+
+/* Forms */
+.rsvp-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.rsvp-form input, .rsvp-form select, .rsvp-form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#rsvp-submit {
+  background: var(--navy);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+#rsvp-submit:hover { background: var(--dusty-rose); }
+
+/* Hearts */
+.heart {
+  position: absolute;
+  color: var(--dusty-rose);
+  opacity: 0.6;
+  pointer-events: none;
+  animation: floatUp 6s linear forwards;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 0.6; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* Animations */
+.fade-in { opacity: 0; transform: translateY(20px); transition: 0.8s all ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
