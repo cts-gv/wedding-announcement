@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eric & Maria — Wedding Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="hearts-container" id="hearts-container"></div>
+
+  <header>
+    <nav class="nav">
+      <div class="nav-brand">Eric &amp; Maria</div>
+      <div class="nav-links">
+        <a href="#our-story">Our Story</a>
+        <a href="#wedding-party">Wedding Party</a>
+        <a href="#the-weekend">The Weekend</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#rsvp">RSVP</a>
+        <a href="#registry">Registry</a>
+        <a href="#messages">Messages</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="our-story">
+      <div class="hero">
+        <div class="hero-content">
+          <h2>Eric &amp; Maria</h2>
+          <h1>We're Getting Married!</h1>
+          <p class="hero-date">September 25, 2027 — Grandview, Washington</p>
+        </div>
+        <div class="hero-image-wrapper">
+          <img id="hero-our-story" class="hero-image" src="" alt="Hero" />
+        </div>
+      </div>
+      </section>
+
+    <div class="section-divider"></div>
+
+    <section id="rsvp">
+      <h2 class="section-title">RSVP</h2>
+      <p class="section-subtitle">We can't wait to celebrate with you!</p>
+      <form action="https://formspree.io/f/your-form-id" method="POST" class="rsvp-form">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <select name="attending" required>
+          <option value="">Will you attend?</option>
+          <option value="yes">Accepts with pleasure</option>
+          <option value="no">Declines with regret</option>
+        </select>
+        <textarea name="notes" placeholder="Dietary restrictions or song requests?"></textarea>
+        <button type="submit" id="rsvp-submit">Submit RSVP</button>
+      </form>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="messages">
+      <h2 class="section-title">Guestbook</h2>
+      <p class="section-subtitle">Leave a message for the happy couple.</p>
+      <form action="https://formspree.io/f/your-form-id" method="POST" class="rsvp-form">
+        <input type="text" name="guest_name" placeholder="Your Name" required />
+        <textarea name="message" placeholder="Your wishes..." required></textarea>
+        <button type="submit" id="rsvp-submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>Eric &amp; Maria — 09.25.2027</p>
+    </footer>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
