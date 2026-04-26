@@ -51,7 +51,7 @@ const WEDDING = {
     heroMarried:      "images/hero-married.jpg",
 
     // ── Our Story ───────────────────────────────────────
-    howWeMet:  "images/how-we-met.jpg",
+    howWeMet:  "images/how-we-met.webp",
     howItWent: "images/how-it-went.jpg",
     proposal:  "images/proposal.jpg",
 
