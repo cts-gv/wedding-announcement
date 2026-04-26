@@ -26,15 +26,15 @@ const WEDDING = {
   // ── COLORS ──────────────────────────────────────────────
   // Change any hex value to retheme the entire site instantly.
   colors: {
-    primary:      "#4b2e83",   // Deep purple — buttons, headings, accents
-    primary_light:"#6a42b3",   // Lighter purple — hover states
-    secondary:    "#c9a84c",   // Gold — decorative accents, dividers
-    dark:         "#2d1a5e",   // Darkest purple — footer, overlays
-    light:        "#f7f5f2",   // Off-white — page background
-    card_bg:      "#ffffff",   // Card and form backgrounds
-    text:         "#333333",   // Body text
-    text_light:   "#555555"    // Subtle / secondary text
-  },
+  primary:       "#1a3a8f",   // Royal blue — buttons, headings, accents
+  primary_light: "#2d52b8",   // Lighter royal blue — hover states
+  secondary:     "#e8c4a8",   // Champagne/blush — decorative accents
+  dark:          "#0f2260",   // Deep navy — footer, overlays
+  light:         "#fdf8f5",   // Warm blush-white — page background
+  card_bg:       "#ffffff",   // Card backgrounds
+  text:          "#1a1a2e",   // Deep navy-tinted text
+  text_light:    "#5a5a7a"    // Soft muted text
+},
 
   // ── PHOTOS ──────────────────────────────────────────────
   // HOW TO CHANGE PHOTOS:
