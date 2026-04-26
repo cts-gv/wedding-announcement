@@ -44,7 +44,7 @@ const WEDDING = {
 
   photos: {
     // ── Heroes ──────────────────────────────────────────
-    heroOurStory:     "images/hero-our-story.jpg",
+    heroOurStory:     "images/golden-hour-sunset-over-vineyard.webp",
     heroWeddingParty: "images/hero-wedding-party.jpg",
     heroWeekend:      "images/hero-weekend.jpg",
     heroRegistry:     "images/hero-registry.jpg",
