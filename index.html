@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <title>Eric & Maria — Wedding Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -27,33 +29,55 @@
   </header>
 
   <main>
+
     <section id="our-story">
       <div class="hero">
         <div class="hero-content">
           <h2>Eric &amp; Maria</h2>
           <h1>We're Getting Married!</h1>
           <p class="hero-date">September 25, 2027 — Grandview, Washington</p>
+          <p class="hero-caption">Surrounded by love, laughter, and a little bit of magic.</p>
         </div>
         <div class="hero-image-wrapper">
-          <img id="hero-our-story" class="hero-image" src="" alt="Hero" />
+          <img id="hero-our-story" class="hero-image" src="" alt="Hero Image" />
+          <div class="hero-tag">Our Story</div>
         </div>
       </div>
-      </section>
+
+      <h2 class="section-title" style="margin-top:2.5rem;">Our Story</h2>
+      <p class="section-subtitle">From a chance meeting to a lifetime together.</p>
+
+      <div class="two-column">
+        <div class="story-card">
+          <h3>How We Met</h3>
+          <p>Add your story details here once your engagement photos are ready.</p>
+        </div>
+        <div class="story-image-wrapper">
+          <img id="img-how-we-met" src="" alt="How we met" />
+        </div>
+      </div>
+    </section>
 
     <div class="section-divider"></div>
 
     <section id="rsvp">
       <h2 class="section-title">RSVP</h2>
-      <p class="section-subtitle">We can't wait to celebrate with you!</p>
+      <p class="section-subtitle">Please let us know if you can make it by August 1st.</p>
+      
       <form action="https://formspree.io/f/your-form-id" method="POST" class="rsvp-form">
+        <input type="hidden" name="_next" value="https://cts-gv.github.io/wedding-announcement/thank-you.html">
+        
         <input type="text" name="name" placeholder="Full Name" required />
         <input type="email" name="email" placeholder="Email Address" required />
+        
         <select name="attending" required>
           <option value="">Will you attend?</option>
           <option value="yes">Accepts with pleasure</option>
           <option value="no">Declines with regret</option>
         </select>
-        <textarea name="notes" placeholder="Dietary restrictions or song requests?"></textarea>
+        
+        <textarea name="notes" placeholder="Dietary restrictions or special notes?"></textarea>
+        
         <button type="submit" id="rsvp-submit">Submit RSVP</button>
       </form>
     </section>
@@ -62,19 +86,26 @@
 
     <section id="messages">
       <h2 class="section-title">Guestbook</h2>
-      <p class="section-subtitle">Leave a message for the happy couple.</p>
+      <p class="section-subtitle">Share your love and blessings with us.</p>
+      
       <form action="https://formspree.io/f/your-form-id" method="POST" class="rsvp-form">
+        <input type="hidden" name="_next" value="https://cts-gv.github.io/wedding-announcement/thank-you.html">
+        
         <input type="text" name="guest_name" placeholder="Your Name" required />
-        <textarea name="message" placeholder="Your wishes..." required></textarea>
+        <textarea name="message" placeholder="Leave a message for the couple..." required></textarea>
+        
         <button type="submit" id="rsvp-submit">Send Message</button>
       </form>
     </section>
 
     <footer>
-      <p>Eric &amp; Maria — 09.25.2027</p>
+      <p>Eric &amp; Maria — September 25, 2027</p>
+      <p>Grandview, Washington</p>
     </footer>
+
   </main>
 
   <script src="js/script.js"></script>
+
 </body>
 </html>
