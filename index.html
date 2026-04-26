@@ -4,12 +4,56 @@
   <meta charset="UTF-8" />
   <title>Eric & Maria — Wedding Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ALL THE CSS DIRECTLY IN THE FILE TO FIX LOADING */
+    :root {
+      --navy: #002366;
+      --dusty-rose: #dcae96;
+      --bg-cream: #fcfaf9;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Lato', sans-serif;
+      background-color: var(--bg-cream) !important;
+      color: #333;
+    }
+
+    header { background: white; border-bottom: 1px solid #eee; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+    .nav { display: flex; justify-content: space-between; align-items: center; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+    .nav-brand { font-size: 1.5rem; font-weight: bold; color: var(--navy); font-family: 'Playfair Display', serif; }
+    .nav-links a { text-decoration: none; color: #333; margin-left: 15px; font-weight: bold; }
+
+    main { max-width: 1000px; margin: 0 auto; padding: 20px; }
+    section { padding: 50px 0; text-align: center; }
+
+    .hero { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+    h1 { color: var(--navy); font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+    
+    .hero-image { width: 100%; max-width: 700px; height: auto; min-height: 300px; background: #ddd; border-radius: 10px; margin-top: 20px; }
+    
+    .two-column { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-top: 30px; text-align: left; }
+    .story-card, .story-image-wrapper { flex: 1; min-width: 300px; }
+    .story-image-wrapper img { width: 100%; border-radius: 10px; min-height: 250px; background: #ddd; }
+
+    .section-title { color: var(--navy); font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 10px; }
+    .section-divider { width: 80px; height: 2px; background: var(--dusty-rose); margin: 30px auto; }
+
+    .rsvp-form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; background: white; padding: 20px; border-radius: 10px; }
+    .rsvp-form input, .rsvp-form select, .rsvp-form textarea { padding: 12px; border: 1px solid #ddd; border-radius: 5px; width: 100%; }
+    #rsvp-submit { background: var(--navy); color: white; border: none; padding: 15px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+
+    .heart { position: fixed; color: var(--dusty-rose); opacity: 0.6; pointer-events: none; animation: floatUp 6s linear forwards; z-index: 99; }
+    @keyframes floatUp { 0% { transform: translateY(100vh); opacity: 0; } 10% { opacity: 0.6; } 100% { transform: translateY(-10vh); opacity: 0; } }
+  </style>
 </head>
 <body>
 
-  <div class="hearts-container" id="hearts-container"></div>
+  <div id="hearts-container"></div>
 
   <header>
     <nav class="nav">
@@ -24,32 +68,27 @@
 
   <main>
     <section id="our-story">
-      <div class="hero fade-in visible">
-        <div class="hero-content">
+      <div class="hero">
           <h2>Eric &amp; Maria</h2>
           <h1>We're Getting Married!</h1>
-          <p class="hero-date">September 25, 2027 — Grandview, Washington</p>
-        </div>
-        <div class="hero-image-wrapper">
-          <img id="hero-our-story" class="hero-image" src="" alt="Hero" />
-          <div class="hero-tag">Our Story</div>
-        </div>
+          <p>September 25, 2027 — Grandview, Washington</p>
+          <img id="hero-img" class="hero-image" src="" alt="Hero">
       </div>
 
-      <div class="two-column fade-in visible">
+      <div class="two-column">
         <div class="story-card">
-          <h3>How We Met</h3>
-          <p>Your story content will go here. For now, we are making sure the layout stays solid while we wait for your photos!</p>
+          <h2 class="section-title">How We Met</h2>
+          <p>This section is now visible! Once you have your photos, you'll be able to swap them in easily.</p>
         </div>
         <div class="story-image-wrapper">
-          <img id="img-how-we-met" src="" alt="How we met" />
+          <img id="story-img" src="" alt="Story">
         </div>
       </div>
     </section>
 
     <div class="section-divider"></div>
 
-    <section id="rsvp" class="fade-in visible">
+    <section id="rsvp">
       <h2 class="section-title">RSVP</h2>
       <form action="https://formspree.io/f/your-form-id" method="POST" class="rsvp-form">
         <input type="hidden" name="_next" value="https://cts-gv.github.io/wedding-announcement/thank-you.html">
@@ -57,8 +96,8 @@
         <input type="email" name="email" placeholder="Email" required />
         <select name="attending" required>
           <option value="">Will you attend?</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
+          <option value="yes">Accepts with pleasure</option>
+          <option value="no">Declines with regret</option>
         </select>
         <button type="submit" id="rsvp-submit">Submit RSVP</button>
       </form>
@@ -66,19 +105,39 @@
 
     <div class="section-divider"></div>
 
-    <section id="messages" class="fade-in visible">
+    <section id="messages">
       <h2 class="section-title">Guestbook</h2>
       <form action="https://formspree.io/f/your-form-id" method="POST" class="rsvp-form">
         <input type="hidden" name="_next" value="https://cts-gv.github.io/wedding-announcement/thank-you.html">
-        <input type="text" name="guest_name" placeholder="Name" required />
+        <input type="text" name="name" placeholder="Your Name" required />
         <textarea name="message" placeholder="Your message..." required></textarea>
         <button type="submit" id="rsvp-submit">Send Message</button>
       </form>
     </section>
 
-    <footer><p>Eric &amp; Maria — 2027</p></footer>
+    <footer style="text-align: center; padding: 40px;"><p>Eric &amp; Maria — 2027</p></footer>
   </main>
 
-  <script src="js/script.js"></script>
+  <script>
+    // JS DIRECTLY IN FILE
+    const placeholder = "https://via.placeholder.com/800x600/fcfaf9/002366?text=Photo+Coming+Soon";
+    
+    window.onload = function() {
+        document.getElementById('hero-img').src = placeholder;
+        document.getElementById('story-img').src = placeholder;
+        
+        // Floating Hearts
+        setInterval(function() {
+            const container = document.getElementById("hearts-container");
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "♥";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.top = "100vh";
+            container.appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }, 1000);
+    };
+  </script>
 </body>
 </html>
