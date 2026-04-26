@@ -24,64 +24,59 @@
 
   <main>
     <section id="our-story">
-      <div class="hero fade-in">
+      <div class="hero fade-in visible">
         <div class="hero-content">
           <h2>Eric &amp; Maria</h2>
           <h1>We're Getting Married!</h1>
           <p class="hero-date">September 25, 2027 — Grandview, Washington</p>
         </div>
         <div class="hero-image-wrapper">
-          <img id="hero-our-story" class="hero-image" src="" alt="Wedding Hero" />
+          <img id="hero-our-story" class="hero-image" src="" alt="Hero" />
           <div class="hero-tag">Our Story</div>
         </div>
       </div>
 
-      <div class="two-column fade-in">
+      <div class="two-column fade-in visible">
         <div class="story-card">
           <h3>How We Met</h3>
-          <p>This is where your beautiful story goes. Once you have your engagement photos, you can replace the placeholders to the right with your real memories.</p>
+          <p>Your story content will go here. For now, we are making sure the layout stays solid while we wait for your photos!</p>
         </div>
         <div class="story-image-wrapper">
-          <img id="img-how-we-met" src="" alt="Story Image" />
+          <img id="img-how-we-met" src="" alt="How we met" />
         </div>
       </div>
     </section>
 
     <div class="section-divider"></div>
 
-    <section id="rsvp" class="fade-in">
+    <section id="rsvp" class="fade-in visible">
       <h2 class="section-title">RSVP</h2>
-      <p class="section-subtitle">Join us for the celebration!</p>
-      <form action="https://formspree.io/f/mdayjlaz" method="POST" class="rsvp-form">
+      <form action="https://formspree.io/f/your-form-id" method="POST" class="rsvp-form">
         <input type="hidden" name="_next" value="https://cts-gv.github.io/wedding-announcement/thank-you.html">
         <input type="text" name="name" placeholder="Full Name" required />
-        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="email" name="email" placeholder="Email" required />
         <select name="attending" required>
           <option value="">Will you attend?</option>
-          <option value="yes">Accepts with pleasure</option>
-          <option value="no">Declines with regret</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
         </select>
-        <textarea name="notes" placeholder="Dietary restrictions or notes?"></textarea>
         <button type="submit" id="rsvp-submit">Submit RSVP</button>
       </form>
     </section>
 
     <div class="section-divider"></div>
 
-    <section id="messages" class="fade-in">
+    <section id="messages" class="fade-in visible">
       <h2 class="section-title">Guestbook</h2>
-      <p class="section-subtitle">Leave a message for the happy couple.</p>
-      <form action="https://formspree.io/f/xlgavwgp" method="POST" class="rsvp-form">
+      <form action="https://formspree.io/f/your-form-id" method="POST" class="rsvp-form">
         <input type="hidden" name="_next" value="https://cts-gv.github.io/wedding-announcement/thank-you.html">
-        <input type="text" name="guest_name" placeholder="Your Name" required />
-        <textarea name="message" placeholder="Your well wishes..." required></textarea>
+        <input type="text" name="guest_name" placeholder="Name" required />
+        <textarea name="message" placeholder="Your message..." required></textarea>
         <button type="submit" id="rsvp-submit">Send Message</button>
       </form>
     </section>
 
-    <footer>
-      <p>Eric &amp; Maria — 09.25.2027</p>
-    </footer>
+    <footer><p>Eric &amp; Maria — 2027</p></footer>
   </main>
 
   <script src="js/script.js"></script>
