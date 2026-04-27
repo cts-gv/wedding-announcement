@@ -268,6 +268,7 @@ const WEDDING = {
     line1:   "Eric & Maria — September 25, 2027",
     line2:   "Grandview, Washington",
     hashtag: "#EricAndMaria2027"
+    credit: 'Created by <a href="https://www.ctechsolution.tech/">Community Tech Solutions</a>'
   }
 
 };
