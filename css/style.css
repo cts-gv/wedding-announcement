@@ -251,7 +251,7 @@ body.nav-open header { z-index: 9999; }
   gap: 1.5rem;
   justify-content: center;
   margin-top: 1.5rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .countdown-unit {
@@ -278,6 +278,13 @@ body.nav-open header { z-index: 9999; }
   text-transform: uppercase;
   color: rgba(255,255,255,0.75);
   margin-top: 0.2rem;
+}
+
+@media (max-width: 480px) {
+  .countdown { gap: 0.4rem; }
+  .countdown-unit { padding: 0.4rem 0.5rem; min-width: 0; }
+  .countdown-number { font-size: 1.4rem; }
+  .countdown-label { font-size: 0.52rem; letter-spacing: 0.08em; }
 }
 
 /* ── STORY SECTIONS ──────────────────────────────────────── */
